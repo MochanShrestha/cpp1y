@@ -1,0 +1,63 @@
+\documentclass{beamer}
+\usepackage[latin1]{inputenc}
+\usepackage{listings}
+\lstset{
+  language=C++,
+  basicstyle=\tiny,
+}
+\usetheme{Warsaw}
+\title{New Features in C++14}
+\author{Mochan Shrestha}
+\institute{Ann Arbor C++ Meetup}
+\date{June 24, 2015}
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+\begin{frame}{Return Type Deduction}
+\begin{enumerate}
+  \item C++11 introduced the new keyword \texttt{auto}
+  \item C++14 exapnds it for return types as well
+  \item Still same compile-time type safety
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Return Type Deduction}
+ \begin{enumerate}
+  \item C++11 also introduced \texttt{decltype}
+  \item C++14 now allows for \texttt{decltype(auto)}
+  \item Just like in C++11, \texttt{decltype} manages to maintain the references.
+ \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Generic Lambdas}
+ \begin{enumerate}
+  \item C++11 introduced lambda functions
+  \begin{lstlisting}
+	vector<int> v = {1, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45};
+	sort(v.begin(), v.end(), [](int i, int j) -> bool {return i>j;});
+  \end{lstlisting}
+  \item Parameters in the lambda function can now also be auto
+  \begin{lstlisting}
+	vector<int> v = {1, 2, 3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45};
+	auto cmpf = [](auto i, auto j) -> auto {return i>j;};
+	sort(v.begin(), v.end(), cmpf);   
+  \end{lstlisting}
+
+  \item Generic lambda functions can now act as templates
+ \end{enumerate}  
+\end{frame}
+
+\begin{frame}{Initalized Lambda Captures}
+ \begin{enumerate}
+  \item C++11 lambdas had a capture section that would take any referenced variable
+  \item C++14 allows for any kind of initalization on the captured members
+ \end{enumerate}
+
+\end{frame}
+
+
+\end{document}
