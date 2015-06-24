@@ -21,7 +21,38 @@
   \item C++14 is a minor release.
   \item Builds up on C++11 
  \end{enumerate}
+\end{frame}
 
+\begin{frame}{[[deprecated]] attribute}
+ \begin{enumerate}
+  \item Adding \texttt{[[deprecated]]} produces a compiler warning
+ \end{enumerate}
+\end{frame}
+
+\begin{frame}{Binary Literals}
+ \begin{enumerate}
+  \item We have decimal, hex and octal support. Now binary is supported
+  \item \texttt{int x = 0b1111101011001110}
+ \end{enumerate}
+\end{frame}
+
+\begin{frame}{Digit Seperator}
+ \begin{enumerate}
+  \item Use single quotes to seperate digits for ease of reading
+  \item \texttt{int x = 0b1111'1010'1100'1110}
+  \item Location of single quote doesn't matter. Ignored by compiler
+  \item \texttt{int x = 3'00.0}
+ \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Variable Templates}
+ \begin{enumerate}
+  \item Variable type can now also be templated.
+  \begin{lstlisting}
+   template <typename T>
+   T pi = 3.14159;
+  \end{lstlisting}
+ \end{enumerate}
 \end{frame}
 
 
@@ -40,6 +71,14 @@
   \item Just like in C++11, \texttt{decltype} manages to maintain the references.
  \end{enumerate}
 \end{frame}
+
+\begin{frame}[fragile]{Relaxed constexpr Restrictions}
+ \begin{enumerate}
+  \item C++11 introduced \texttt{constexpr} which allowed compile time evaluation of the variables and functions.
+  \item C++14 allows using \texttt{if}, \texttt{switch} and \texttt{for} among others.
+ \end{enumerate}
+\end{frame}
+
 
 \begin{frame}[fragile]{Generic Lambdas}
  \begin{enumerate}
